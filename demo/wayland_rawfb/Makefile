@@ -1,6 +1,6 @@
 WAYLAND=`pkg-config wayland-client --cflags --libs`
-WAYLAND_SCANNER=wayland-scanner
-WAYLAND_PROTOCOLS_DIR=/usr/share/wayland-protocols
+WAYLAND_SCANNER=`pkg-config --variable=wayland_scanner wayland-scanner`
+WAYLAND_PROTOCOLS_DIR=`pkg-config --variable=pkgdatadir wayland-protocols`
 
 CFLAGS?=-std=c99 -Wall -Wextra -pedantic -Wno-unused-function -O3 -fvisibility=hidden
 
